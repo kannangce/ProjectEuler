@@ -14,10 +14,10 @@
   fibonacci series."
   [curr-seq]
   (if (or (empty? curr-seq) (= 1 (count curr-seq)))
-  1
-  (+
-    (last curr-seq)
-    (nth curr-seq (- (count curr-seq) 2)))))
+   1
+   (+
+     (last curr-seq)
+     (nth curr-seq (- (count curr-seq) 2)))))
 
 ;; The sum of all the even fibonacci numbers
 ;; within 4000000
