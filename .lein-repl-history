@@ -127,3 +127,16 @@ Math/abs 5.0
               #(vector x %1 (Math/sqrt (+ (square x) (square %1))))
               (range x 1000)))
           (range 1 1000)))))
+(defn prime?
+  "Verifies whether the given number is prime or not"
+  [number]
+  (if (or (= number 0) (= number 1)) false
+   (do
+    (if (<= number 2) true
+     (nil?
+      (some
+       #(<= (mod number %1) 0)
+       (range 2 (inc (Math/sqrt number)))))))))
+(reduce + (filter prime? (range 2000000)))
+git statu
+git status
