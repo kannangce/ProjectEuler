@@ -1,0 +1,129 @@
+(defn square
+  [x]
+  (* x x))
+(defn
+  custom-pythagorean-triplet?
+  [seq-to-check]
+  (and
+    (integer? (nth seq-to-check 2))
+    (= 1000 (reduce + seq-to-check))))
+(filter custom-pythagorean-triplet?
+ (reduce into
+        []
+        (map
+          (fn
+            [x]
+            (map
+              #(vector x %1 (Math/sqrt (+ (square x) (square %1))))
+              (range x 1000)))
+          (range 1 1000))))
+(reduce into
+        []
+        (map
+          (fn
+            [x]
+            (map
+              #(vector x %1 (Math/sqrt (+ (square x) (square %1))))
+              (range x 1000)))
+          (range 1 1000)))
+(def triplets 
+  (reduce into
+       []
+       (map
+         (fn
+           [x]
+           (map
+             #(vector x %1 (Math/sqrt (+ (square x) (square %1))))
+             (range x 1000)))
+         (range 1 1000))))
+(filter #((integer? (nth %1 2))) triplets)
+(filter #(integer? (nth %1 2)) triplets)
+(triplets)
+(map println triplets)
+(filter #(integer? (nth %1 2)) [[1 2 3] [1 2 3.0]])
+(filter custom-pythagorean-triplet?
+ (reduce into
+        []
+        (map
+          (fn
+            [x]
+            (map
+              #(vector x %1 (Math/sqrt (+ (square x) (square %1))))
+              (range x 10)))
+          (range 1 10))))
+(reduce into
+        []
+        (map
+          (fn
+            [x]
+            (map
+              #(vector x %1 (Math/sqrt (+ (square x) (square %1))))
+              (range x 10)))
+          (range 1 10)))
+Math/abs 5.0
+(Math/abs 5.0)
+(Math/ciel 5.0)
+(Math/ceil 5.0)
+(Math/floor 5.0)
+(defn
+  custom-pythagorean-triplet?
+  [seq-to-check]
+  (def a (nth seq-to-check 0))
+  (def b (nth seq-to-check 1))
+  (def c (nth seq-to-check 2))
+  (and
+    (= 1000 (reduce + seq-to-check))
+    (= (Math/floor c) (Math/sqrt (+ (square a) (+ square b))))))
+(filter custom-pythagorean-triplet? triplets)
+(defn
+  custom-pythagorean-triplet?
+  [seq-to-check]
+  (def a (nth seq-to-check 0))
+  (def b (nth seq-to-check 1))
+  (def c (nth seq-to-check 2))
+  (and
+    (= 1000 (reduce + seq-to-check))
+    (= (Math/floor c) (Math/sqrt (+ (square a) (square b))))))
+(filter custom-pythagorean-triplet? triplets)
+(nth triplets 1)
+(count triplets)
+(filter custom-pythagorean-triplet? [[200 375 425]])
+(filter custom-pythagorean-triplet? [[200 375 425] [3 4 5]])
+(filter custom-pythagorean-triplet? [[200 375 425.0] [3 4 5]])
+(reduce + [200 375 425.0])
+(type (reduce + [200 375 425.0]))
+(type (reduce + [200 375 425]))
+(defn
+  custom-pythagorean-triplet?
+  [seq-to-check]
+  (def a (nth seq-to-check 0))
+  (def b (nth seq-to-check 1))
+  (def c (nth seq-to-check 2))
+  (and
+    (= 1000.0 (reduce + seq-to-check))
+    (= (Math/floor c) (Math/sqrt (+ (square a) (square b))))))
+(filter custom-pythagorean-triplet? [[200 375 425.0] [3 4 5]])
+(filter custom-pythagorean-triplet? triplets)
+(* 200 375 425
+)
+(filter custom-pythagorean-triplet?
+ (reduce into
+        []
+        (map
+          (fn
+            [x]
+            (map
+              #(vector x %1 (Math/sqrt (+ (square x) (square %1))))
+              (range x 1000)))
+          (range 1 1000))))
+(time 
+ (filter custom-pythagorean-triplet?
+  (reduce into
+        []
+        (map
+          (fn
+            [x]
+            (map
+              #(vector x %1 (Math/sqrt (+ (square x) (square %1))))
+              (range x 1000)))
+          (range 1 1000)))))
