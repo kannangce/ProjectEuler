@@ -3,8 +3,10 @@
   [a b]
   (zero? (mod a b)))
 
-;; Not scalable for producing infinite series
-(defn triangle-series
+;; Not possible to produce infinite series
+;; using this. Also as verified using the time-taken,
+;; this is not optimal compared to the other
+(defn triangle-series-0
   [n]
   (loop [triangle-ser [1] curr 2]
     ;(println (str triangle-ser ":" curr))
@@ -29,20 +31,15 @@
    (take a (triangle-series))))
 
 (defn factors
+  "Gives all the numbers(including 1 and itself)
+  that can divide the given number."
   [number]
   (filter
     #(factor? number %1)
     (range 1 (inc number))))
 
+;; Took 12.5 hrs for the below call to give the output
 (some #(when
-        (> (count (factors %)) 5
+        (> (count (factors %)) 500
          %))
       (triangle-series))
-
-
-
-(some
-  #(when (= 4 %) %)
-  [1 2 3 4])
-
-(some #(neg? %1) [-2 -1 0 1 2 3])
