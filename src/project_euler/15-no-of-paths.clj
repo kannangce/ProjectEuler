@@ -1,3 +1,5 @@
+;; This is a naive approach. For optimized one
+;; refer to the 15-no-of-paths-optimized.clj
 (def x-end 20)
 (def y-end 20)
 

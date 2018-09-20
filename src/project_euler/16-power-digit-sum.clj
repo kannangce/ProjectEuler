@@ -4,4 +4,4 @@
   +
   (map
     #(Character/getNumericValue %1)
-    (seq (str (pow 2 1000)))))
+    (str (pow 2 1000))))
